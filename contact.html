@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact us</title>
+  <link rel="stylesheet" href="css/contactpage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/contact.png">
+
+
+</head>
+
+<body>
+  <div class="contact-us">
+
+    <a style="text-decoration: none; color: black;" href="/index.html">
+      <h3 style="font-size: 2rem;">Comfort Corner</h3>
+    </a>
+    <form action="#">
+
+      <label for="customerName">NAME <em>&#x2a;</em></label><input id="customerName" name="customerName" required=""
+        type="text" />
+      <!-- <label for="customerEmail">EMAIL <em>&#x2a;</em></label> <input id="customerEmail" name="customerEmail" required="" type="email" /> -->
+      <label for="customerPhone">PHONE <em>&#x2a;</em></label><input id="customerPhone" name="customerPhone" required=""
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" type="tel" /><label for="orderNumber">BARCODE / SHOE NAME</label><input
+        id="orderNumber" name="orderNumber" type="text" /><label for="customerNote">YOUR MESSAGE
+        <em>&#x2a;</em></label><textarea id="customerNote" name="customerNote" required="" rows="4"></textarea>
+      <h3>
+        All payment options available. Visit us
+      </h3>
+      <button id="customerOrder" onclick="gotowhatsapp()">SUBMIT</button>
+    </form>
+  </div>
+
+  <!-- Whatsapp integration in button  -->
+  <script>
+    function gotowhatsapp() {
+
+      var name = document.getElementById("customerName").value;
+      var phone = document.getElementById("customerPhone").value;
+      var order = document.getElementById("orderNumber").value;
+      var note = document.getElementById("customerNote").value;
+
+      var url = "https://wa.me/918249689672?text="
+        + "Name: " + name + "%0a"
+        + "Phone: " + phone + "%0a"
+        + "Barcode / Shoe Name: " + order + "%0a"
+        + "Message: " + note;
+
+      window.open(url, '_blank').focus();
+    }
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
